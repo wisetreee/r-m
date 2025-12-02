@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  padding: 0.32rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -2px 0 8px var(--color-borders-header-footer);
+  margin-bottom: 1.625rem;
+}
+
+.headerContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonPanel {
+  display: flex;
+  gap: 1rem;
+}
