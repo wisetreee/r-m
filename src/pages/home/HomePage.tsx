@@ -1,5 +1,6 @@
-import { BigLogo, Loader } from '@/shared/components';
 import styles from './HomePage.module.css';
+
+import { BigLogo, Loader } from '@/shared/components';
 
 export const HomePage = () => {
   return (

@@ -1,5 +1,6 @@
-import bigLogo from '@/assets/big_logo.png';
 import styles from './BigLogo.module.css';
+
+import bigLogo from '@/assets/big_logo.png';
 
 export const BigLogo = () => {
   return (
