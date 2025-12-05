@@ -1,14 +1,12 @@
 import { Button } from '../button/Button';
 import styles from './Header.module.css';
-import Logo from '@/assets/logo.svg?react';
-import SunIcon from '@/assets/icons/sun.svg?react';
-import RuIcon from '@/assets/icons/ru.svg?react';
+import { LogoIcon, SunIcon, RuIcon } from '@/assets/icons';
 
 export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.headerContent}`}>
-        <Logo />
+        <LogoIcon />
         <div className={styles.buttonPanel}>
           <Button
             variant='icon'

@@ -1,6 +1,6 @@
 import { Button, Loader } from '@/shared/components';
 import styles from './CharacterPage.module.css';
-import ArrowBack from '@/assets/icons/arrow_back.svg?react';
+import { ArrowBackIcon } from '@/assets/icons';
 import { useNavigate } from 'react-router';
 
 export const CharacterPage = () => {
@@ -11,7 +11,7 @@ export const CharacterPage = () => {
         onClick={() => navigate(-1)}
         className={styles.backButton}
         variant='ghost'
-        leftIcon={<ArrowBack />}
+        leftIcon={<ArrowBackIcon />}
       >
         GO BACK
       </Button>
