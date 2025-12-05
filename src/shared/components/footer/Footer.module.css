@@ -1,0 +1,20 @@
+.footer {
+  width: 100%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -2px 0 8px var(--color-borders-header-footer);
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: var(--color-text-primary);
+  text-align: center;
+}

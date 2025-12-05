@@ -1,0 +1,45 @@
+.button {
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+/* variants */
+.primary {
+  background: white;
+  border-color: var(--color-borders-button);
+}
+
+.ghost {
+  background: transparent;
+  border-color: transparent;
+}
+
+.icon {
+  background: transparent;
+  border-color: var(--color-borders-button);
+}
+
+/* icon-only */
+.iconOnly {
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+/* pieces */
+.icon {
+  display: inline-flex;
+}
+.label {
+  white-space: nowrap;
+}
