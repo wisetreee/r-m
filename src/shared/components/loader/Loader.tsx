@@ -1,4 +1,5 @@
 import type { FC, HTMLAttributes } from 'react';
+import clsx from 'clsx';
 
 import styles from './Loader.module.css';
 
@@ -17,7 +18,7 @@ export const Loader: FC<LoaderProps> = ({
   ...rest
 }) => (
   <div
-    className={[styles.loaderContainer, className].join(' ')}
+    className={clsx(styles.loaderContainer, className)}
     {...rest}
   >
     <img

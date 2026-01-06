@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import clsx from 'clsx';
 
 import styles from './Button.module.css';
 
@@ -22,14 +23,12 @@ export const Button = ({
 
   return (
     <button
-      className={[
+      className={clsx(
         styles.button,
         styles[variant],
-        isIconOnly ? styles.iconOnly : '',
+        isIconOnly && styles.iconOnly,
         className
-      ]
-        .filter(Boolean)
-        .join(' ')}
+      )}
       {...rest}
     >
       {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
