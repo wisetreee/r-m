@@ -37,6 +37,7 @@ export default defineConfig([
       // не ругаемся на Vite/SVGR импорты вида *.svg?react
       'import/no-unresolved': ['error', { ignore: ['\\.svg\\?react$'] }],
       'import/newline-after-import': 'error',
+      'import/order': ['error', {'newlines-between': 'always'}]
     },
   }
 ]);

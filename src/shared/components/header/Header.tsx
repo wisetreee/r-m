@@ -1,5 +1,7 @@
 import { Button } from '../button/Button';
+
 import styles from './Header.module.css';
+
 import { LogoIcon, SunIcon, RuIcon } from '@/assets/icons';
 
 export const Header = () => {

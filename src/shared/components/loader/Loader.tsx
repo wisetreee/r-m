@@ -1,7 +1,10 @@
+import type { FC, HTMLAttributes } from 'react';
+import clsx from 'clsx';
+
+import styles from './Loader.module.css';
+
 import loadingBig from '@/assets/loading_big.png';
 import loadingSmall from '@/assets/loading_small.png';
-import type { FC, HTMLAttributes } from 'react';
-import styles from './Loader.module.css';
 
 interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
   size: 'big' | 'small';
@@ -15,7 +18,7 @@ export const Loader: FC<LoaderProps> = ({
   ...rest
 }) => (
   <div
-    className={[styles.loaderContainer, className].join(' ')}
+    className={clsx(styles.loaderContainer, className)}
     {...rest}
   >
     <img

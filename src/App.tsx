@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
+
 import { MainLayout } from '@/layouts';
 import { CharacterPage, HomePage } from '@/pages';
 

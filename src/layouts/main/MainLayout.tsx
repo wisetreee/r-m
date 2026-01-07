@@ -1,6 +1,8 @@
-import { Footer, Header } from '@/shared/components';
 import type { FC } from 'react';
+
 import styles from './MainLayout.module.css';
+
+import { Footer, Header } from '@/shared/components';
 
 interface MainLayoutProps {
   children: React.ReactNode;

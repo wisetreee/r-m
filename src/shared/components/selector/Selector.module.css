@@ -1,0 +1,91 @@
+.small {
+  width: 5.8rem;
+  --selector-padding-y: 0.125rem;
+  --selector-padding-x: 0.25rem;
+  --selector-font-size: 0.875rem;
+
+  .chevron {
+    width: 4px;
+    height: 2px;
+  }
+}
+
+.big {
+  width: 15rem;
+  --selector-padding-y: 0.9rem;
+  --selector-padding-x: 1rem;
+  --selector-font-size: 1rem;
+  .chevron {
+    width: 10px;
+    height: 5px;
+  }
+}
+.selector {
+  position: relative;
+  border-radius: 0.375rem;
+}
+
+.controlButton {
+  width: 100%;
+  border: 1px solid var(--color-borders-button);
+  background: white;
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: inherit;
+  transition: border-color 0.15s ease;
+  padding: var(--selector-padding-y) var(--selector-padding-x);
+}
+
+.value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.placeholder {
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.chevron {
+  color: var(--color-text-secondary);
+  transition: transform 0.15s ease;
+}
+
+.chevronOpen {
+  transform: rotate(-180deg);
+}
+
+.dropdown {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+
+  background: white;
+  border: 1px solid var(--color-borders-card);
+  border-radius: inherit;
+  z-index: 10;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: var(--selector-padding-y) var(--selector-padding-x);
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+.option:hover {
+  background: hsl(0deg 0% 0% / 4%);
+}
+
+.optionActive {
+  background: hsl(0deg 0% 0% / 8%);
+}
+
+.optionLabel {
+  white-space: nowrap;
+}
