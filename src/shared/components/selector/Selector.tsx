@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 import styles from './Selector.module.css';
 
-import ArrowIcon from '@/assets/icons/arrow.svg?react';
+import { ArrowIcon } from '@/assets/icons';
 
 export type TSelectorSize = 'big' | 'small';
 
