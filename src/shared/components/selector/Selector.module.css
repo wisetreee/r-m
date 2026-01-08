@@ -29,7 +29,7 @@
   width: 100%;
   border: 1px solid var(--color-borders-button);
   background: white;
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -75,7 +75,7 @@
   align-items: center;
   padding: var(--selector-padding-y) var(--selector-padding-x);
   cursor: pointer;
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
 }
 
 .option:hover {

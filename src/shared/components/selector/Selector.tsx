@@ -75,7 +75,12 @@ export const Selector: FC<SelectorProps> = ({
         aria-expanded={isOpen}
         onClick={handleToggle}
       >
-        <span className={selectedOption ? styles.value : styles.placeholder}>
+        <span
+          className={clsx(
+            selectedOption ? styles.value : styles.placeholder,
+            size === 'big' ? 'text-input-label' : 'text-reg14'
+          )}
+        >
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         <ArrowIcon
