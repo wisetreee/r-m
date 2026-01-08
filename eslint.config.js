@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import importPlugin from 'eslint-plugin-import';
-import { viteConfigObj } from './vite.config.ts';
+import { viteConfigObj } from './vite-eslint.config.mjs';
 
 export default defineConfig([
   globalIgnores(['dist']),

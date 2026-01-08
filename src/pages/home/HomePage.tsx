@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import styles from './HomePage.module.css';
 
@@ -31,7 +31,7 @@ export const HomePage = () => {
   const handleBigChange = (value: string) => setValueBig(value);
   const handleSmallChange = (value: string) => setValueSmall(value);
   const handleInputChange = (value: string) => setInputValue(value);
-  const handleInputReset = () => setInputValue("");
+  const handleInputReset = () => setInputValue('');
   return (
     <section className={`container ${styles.charactersSection}`}>
       <BigLogo />
@@ -50,19 +50,19 @@ export const HomePage = () => {
         value={valueSmall}
       />
       <Input
-      placeholder='qwer'
-      value={inputValue}
-      onChange={handleInputChange}
-      onReset={handleInputReset}
-      icon=<SearchIcon/>
+        placeholder='qwer'
+        value={inputValue}
+        onChange={handleInputChange}
+        onReset={handleInputReset}
+        icon=<SearchIcon />
       />
       <Input
-      placeholder='qwer'
-      value={inputValue}
-      variant='underline'
-      onChange={handleInputChange}
-      onReset={handleInputReset}
-      icon=<SearchIcon/>
+        placeholder='qwer'
+        value={inputValue}
+        variant='underline'
+        onChange={handleInputChange}
+        onReset={handleInputReset}
+        icon=<SearchIcon />
       />
       <Loader
         size='big'

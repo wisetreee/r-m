@@ -1,8 +1,8 @@
 import type { FC, HTMLAttributes } from 'react';
-import clsx from 'clsx';
 
 import styles from './Loader.module.css';
 
+import { clsx } from '@/shared/helpers';
 import loadingBig from '@/assets/loading_big.png';
 import loadingSmall from '@/assets/loading_small.png';
 

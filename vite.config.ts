@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import svgr from 'vite-plugin-svgr';
 
-export const viteConfigObj = {
+const viteConfigObj = {
   plugins: [react(), svgr()],
   resolve: {
     alias: {

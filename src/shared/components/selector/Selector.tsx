@@ -1,9 +1,9 @@
 import type { FC, FocusEvent, HTMLAttributes, ReactNode } from 'react';
 import { useMemo, useState } from 'react';
-import clsx from 'clsx';
 
 import styles from './Selector.module.css';
 
+import { clsx } from '@/shared/helpers';
 import { ArrowIcon } from '@/assets/icons';
 
 export type TSelectorSize = 'big' | 'small';

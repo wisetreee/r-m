@@ -1,7 +1,9 @@
 import type { ChangeEvent, FC, HTMLAttributes, ReactNode } from 'react';
+
 import styles from './Input.module.css';
-import clsx from 'clsx';
+
 import { CrossIcon } from '@/assets/icons';
+import { clsx } from '@/shared/helpers';
 
 interface InputProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   variant?: 'underline' | 'border';
@@ -35,12 +37,19 @@ export const Input: FC<InputProps> = ({
     >
       {icon && <div className={styles.icon}>{icon}</div>}
       <input
-        className={clsx(styles.input, variant === 'underline' && "text-h6-med")}
+        className={clsx(styles.input, variant === 'underline' && 'text-h6-med')}
         onChange={handleChange}
         placeholder={placeholder}
         value={value}
       />
-      {value !== '' && <button onClick={handleReset} className={styles.resetButton}><CrossIcon/></button>}
+      {value !== '' && (
+        <button
+          onClick={handleReset}
+          className={styles.resetButton}
+        >
+          <CrossIcon />
+        </button>
+      )}
     </div>
   );
 };

@@ -5,4 +5,13 @@ import LogoIcon from '@/assets/icons/logo.svg?react';
 import ArrowIcon from '@/assets/icons/arrow.svg?react';
 import SearchIcon from '@/assets/icons/search.svg?react';
 import CrossIcon from '@/assets/icons/cross.svg?react';
-export { ArrowBackIcon, ArrowIcon, RuIcon, SunIcon, LogoIcon, SearchIcon, CrossIcon};
+
+export {
+  ArrowBackIcon,
+  ArrowIcon,
+  RuIcon,
+  SunIcon,
+  LogoIcon,
+  SearchIcon,
+  CrossIcon
+};
