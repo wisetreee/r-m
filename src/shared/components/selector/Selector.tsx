@@ -1,10 +1,10 @@
 import type { FC, FocusEvent, HTMLAttributes, ReactNode } from 'react';
 import { useMemo, useState } from 'react';
-import clsx from 'clsx';
 
 import styles from './Selector.module.css';
 
-import ArrowIcon from '@/assets/icons/arrow.svg?react';
+import { clsx } from '@/shared/helpers';
+import { ArrowIcon } from '@/assets/icons';
 
 export type TSelectorSize = 'big' | 'small';
 
@@ -75,7 +75,12 @@ export const Selector: FC<SelectorProps> = ({
         aria-expanded={isOpen}
         onClick={handleToggle}
       >
-        <span className={selectedOption ? styles.value : styles.placeholder}>
+        <span
+          className={clsx(
+            selectedOption ? styles.value : styles.placeholder,
+            size === 'big' ? 'text-input-label' : 'text-reg14'
+          )}
+        >
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         <ArrowIcon

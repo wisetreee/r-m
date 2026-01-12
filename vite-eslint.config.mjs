@@ -1,14 +1,9 @@
-// vite-eslint.config.mjs
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import path from 'path';
 
 export const viteConfigObj = {
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
+      '@': path.resolve(process.cwd(), './src')
+    }
+  }
 };

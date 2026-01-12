@@ -1,7 +1,8 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
-import clsx from 'clsx';
 
 import styles from './Button.module.css';
+
+import { clsx } from '@/shared/helpers';
 
 type ButtonVariant = 'primary' | 'ghost' | 'icon';
 
