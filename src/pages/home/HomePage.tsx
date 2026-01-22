@@ -54,15 +54,16 @@ export const HomePage = () => {
         value={inputValue}
         onChange={handleInputChange}
         onReset={handleInputReset}
-        icon=<SearchIcon />
+        icon={SearchIcon}
       />
+
       <Input
         placeholder='qwer'
         value={inputValue}
         variant='underline'
         onChange={handleInputChange}
         onReset={handleInputReset}
-        icon=<SearchIcon />
+        icon={SearchIcon}
       />
       <Loader
         size='big'

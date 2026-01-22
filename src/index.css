@@ -41,29 +41,27 @@ h3 {
   font-size: 1.125rem;
 }
 
-.text-h6-med {
+.heading-sm {
   font-size: 1.25rem;
   letter-spacing: 0.15px;
   line-height: 1.8rem;
   font-weight: 500;
-
 }
 
-
-.text-h3 {
+.heading-md {
   font-size: 1.125rem;
   font-weight: 700;
   font-family: Karla, sans-serif;
 }
 
-.text-reg14 {
+.body-sm {
   font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1,3rem;
-  letter-spacing: 0,015rem;
+  line-height: 1, 3rem;
+  letter-spacing: 0, 015rem;
 }
 
-.text-input-label {
+.label {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.2rem;

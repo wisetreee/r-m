@@ -15,7 +15,7 @@
     letter-spacing: 0.15px;
     color: var(--color-text-primary);
     font-weight: 500;
-  }   
+  }
 }
 
 .inputContainer {
@@ -28,9 +28,10 @@
 }
 
 .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .input {
