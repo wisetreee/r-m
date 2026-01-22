@@ -1,3 +1,5 @@
+@import 'normalize.css';
+
 @media (prefers-color-scheme: light) {
   :root {
     --color-background-main: white;
@@ -25,21 +27,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  margin: 0;
   overflow: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-h3 {
-  font-size: 1.125rem;
-}
 
 .heading-sm {
   font-size: 1.25rem;

@@ -26,6 +26,6 @@ export const Loader: FC<LoaderProps> = ({
       src={size === 'big' ? loadingBig : loadingSmall}
       alt='Loading…'
     />
-    <h3 className={styles.footer}>{footer}</h3>
+    <h3 className={clsx(styles.footer, 'heading-md')}>{footer}</h3>
   </div>
 );
