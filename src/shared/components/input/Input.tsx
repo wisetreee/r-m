@@ -1,6 +1,6 @@
 import type { ChangeEvent, ComponentType, FC, HTMLAttributes } from 'react';
 
-import styles from './Input.module.css';
+import styles from './Input.module.scss';
 
 import { CrossIcon } from '@/assets/icons';
 import { clsx } from '@/shared/helpers';

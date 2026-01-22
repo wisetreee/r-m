@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
 
-import styles from './CharacterPage.module.css';
+import styles from './CharacterPage.module.scss';
 
 import { Button, Loader } from '@/shared/components';
 import { ArrowBackIcon } from '@/assets/icons';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from './HomePage.module.css';
+import styles from './HomePage.module.scss';
 
 import {
   BigLogo,
