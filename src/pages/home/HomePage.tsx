@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from './HomePage.module.css';
+import styles from './HomePage.module.scss';
 
 import {
   BigLogo,
@@ -10,6 +10,21 @@ import {
   type ISelectorOption
 } from '@/shared/components';
 import { SearchIcon } from '@/assets/icons';
+import { CharacterCard, type CharacterCardDTO } from '@/widgets';
+
+const character: CharacterCardDTO = {
+  id: 1,
+  name: 'Rick Sanchez',
+  status: 'Alive',
+  species: 'Human',
+  gender: 'Male',
+  location: {
+    name: 'Earth',
+    url: 'https://rickandmortyapi.com/api/location/20'
+  },
+  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+  url: 'https://rickandmortyapi.com/api/character/1'
+};
 
 const bigMockOptions: ISelectorOption[] = [
   { label: 'label', value: 'value' },
@@ -54,20 +69,23 @@ export const HomePage = () => {
         value={inputValue}
         onChange={handleInputChange}
         onReset={handleInputReset}
-        icon=<SearchIcon />
+        icon={SearchIcon}
       />
+
       <Input
         placeholder='qwer'
         value={inputValue}
         variant='underline'
         onChange={handleInputChange}
         onReset={handleInputReset}
-        icon=<SearchIcon />
+        icon={SearchIcon}
       />
       <Loader
         size='big'
         footer='Loading characters...'
       />
+
+      <CharacterCard character={character} />
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import { Button } from '../button/Button';
 
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 
 import { LogoIcon, SunIcon, RuIcon } from '@/assets/icons';
 

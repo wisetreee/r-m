@@ -1,13 +1,17 @@
-import type { ChangeEvent, FC, HTMLAttributes, ReactNode } from 'react';
+import type { ChangeEvent, ComponentType, FC, HTMLAttributes } from 'react';
 
-import styles from './Input.module.css';
+import styles from './Input.module.scss';
 
-import { CrossIcon } from '@/assets/icons';
+import { InputCrossIcon } from '@/assets/icons';
 import { clsx } from '@/shared/helpers';
+
+interface IconProps {
+  className?: string;
+}
 
 interface InputProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   variant?: 'underline' | 'border';
-  icon?: ReactNode;
+  icon?: ComponentType<IconProps>;
   placeholder?: string;
   value: string;
   onChange?: (value: string) => void;
@@ -15,7 +19,7 @@ interface InputProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
 }
 export const Input: FC<InputProps> = ({
   variant = 'border',
-  icon,
+  icon: Icon,
   placeholder,
   value,
   onChange,
@@ -35,9 +39,9 @@ export const Input: FC<InputProps> = ({
       className={clsx(styles[variant], styles.inputContainer, className)}
       {...rest}
     >
-      {icon && <div className={styles.icon}>{icon}</div>}
+      {Icon && <Icon className={styles.icon} />}
       <input
-        className={clsx(styles.input, variant === 'underline' && 'text-h6-med')}
+        className={clsx(styles.input, variant === 'underline' && 'heading-sm')}
         onChange={handleChange}
         placeholder={placeholder}
         value={value}
@@ -47,7 +51,7 @@ export const Input: FC<InputProps> = ({
           onClick={handleReset}
           className={styles.resetButton}
         >
-          <CrossIcon />
+          <InputCrossIcon />
         </button>
       )}
     </div>
