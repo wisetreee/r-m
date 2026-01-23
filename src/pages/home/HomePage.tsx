@@ -10,6 +10,21 @@ import {
   type ISelectorOption
 } from '@/shared/components';
 import { SearchIcon } from '@/assets/icons';
+import { CharacterCard, type CharacterCardDTO } from '@/widgets';
+
+const character: CharacterCardDTO = {
+  id: 1,
+  name: 'Rick Sanchez',
+  status: 'Alive',
+  species: 'Human',
+  gender: 'Male',
+  location: {
+    name: 'Earth',
+    url: 'https://rickandmortyapi.com/api/location/20'
+  },
+  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+  url: 'https://rickandmortyapi.com/api/character/1'
+};
 
 const bigMockOptions: ISelectorOption[] = [
   { label: 'label', value: 'value' },
@@ -69,6 +84,8 @@ export const HomePage = () => {
         size='big'
         footer='Loading characters...'
       />
+
+      <CharacterCard character={character} />
     </section>
   );
 };

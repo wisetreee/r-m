@@ -2,7 +2,7 @@ import type { ChangeEvent, ComponentType, FC, HTMLAttributes } from 'react';
 
 import styles from './Input.module.scss';
 
-import { CrossIcon } from '@/assets/icons';
+import { InputCrossIcon } from '@/assets/icons';
 import { clsx } from '@/shared/helpers';
 
 interface IconProps {
@@ -51,7 +51,7 @@ export const Input: FC<InputProps> = ({
           onClick={handleReset}
           className={styles.resetButton}
         >
-          <CrossIcon />
+          <InputCrossIcon />
         </button>
       )}
     </div>

@@ -25,12 +25,16 @@ $active-bg: hsla(0, 0%, 0%, 8%);
 }
 
 // Размеры
-.small { @include selector-size('small'); }
-.big   { @include selector-size('big'); }
+.small {
+  @include selector-size('small');
+}
+.big {
+  @include selector-size('big');
+}
 
 // Базовые стили
 .selector {
-  width: var(--width); 
+  width: var(--width);
   position: relative;
   border-radius: $selector-radius;
 }
@@ -46,7 +50,7 @@ $active-bg: hsla(0, 0%, 0%, 8%);
   cursor: pointer;
   border-radius: inherit;
   transition: border-color $transition;
-  padding: var(--padding-y) var(--padding-x); 
+  padding: var(--padding-y) var(--padding-x);
   box-sizing: border-box;
   font-size: var(--font-size);
 }
@@ -70,7 +74,7 @@ $active-bg: hsla(0, 0%, 0%, 8%);
   color: var(--color-text-secondary);
   transition: transform $transition;
   flex-shrink: 0;
-  width: var(--chevron-w);    
+  width: var(--chevron-w);
   height: var(--chevron-h);
 }
 
@@ -83,7 +87,7 @@ $active-bg: hsla(0, 0%, 0%, 8%);
   top: 100%;
   margin-top: $dropdown-gap;
   width: 100%;
-  padding: 0;      
+  padding: 0;
   background: var(--color-background-main);
   border: 1px solid var(--color-borders-card);
   border-radius: $selector-radius;
@@ -94,7 +98,7 @@ $active-bg: hsla(0, 0%, 0%, 8%);
 .option {
   display: flex;
   align-items: center;
-  padding: var(--padding-y) var(--padding-x);  
+  padding: var(--padding-y) var(--padding-x);
   font-size: var(--font-size);
   cursor: pointer;
   color: var(--color-text-secondary);

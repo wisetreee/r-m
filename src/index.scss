@@ -27,6 +27,7 @@
 
 body {
   overflow: hidden;
+  overflow-y: auto;
 }
 
 // Typography
@@ -46,8 +47,8 @@ body {
 .body-sm {
   font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1.3rem;  
-  letter-spacing: 0.015rem; 
+  line-height: 1.3rem;
+  letter-spacing: 0.015rem;
 }
 
 .label {
