@@ -1,18 +1,20 @@
 .header {
-  width: 100%;
-  padding: 0.32rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  box-shadow: -2px 0 8px var(--color-borders-header-footer);
+  justify-content: center;
+
+  width: 100%;
   margin-bottom: 1.625rem;
+  padding: 0.32rem;
+
+  box-shadow: -2px 0 8px var(--color-borders-header-footer);
 }
 
 .headerContent {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .buttonPanel {
