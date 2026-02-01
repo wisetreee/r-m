@@ -22,3 +22,8 @@ export interface Character {
   url: string;
   created: string;
 }
+
+export type CharacterCardDTO = Pick<
+  Character,
+  'id' | 'name' | 'image' | 'status' | 'location' | 'gender' | 'species' | 'url'
+>;

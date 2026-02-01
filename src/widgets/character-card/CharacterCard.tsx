@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import styles from './CharacterCard.module.scss';
 
-import type { Character, Status } from '@/shared/types';
+import type { CharacterCardDTO, Status } from '@/shared/types';
 import {
   FieldWithLabel,
   Input,
@@ -20,11 +20,6 @@ const statusOptions: SelectorOption[] = [
   { label: <StatusOption status='Dead' />, value: 'Dead' },
   { label: <StatusOption status='Unknown' />, value: 'Unknown' }
 ];
-
-export type CharacterCardDTO = Pick<
-  Character,
-  'id' | 'name' | 'image' | 'status' | 'location' | 'gender' | 'species' | 'url'
->;
 
 type CardMode = 'view' | 'edit';
 
