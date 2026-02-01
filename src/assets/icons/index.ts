@@ -5,6 +5,9 @@ import LogoIcon from '@/assets/icons/logo.svg?react';
 import ArrowIcon from '@/assets/icons/arrow.svg?react';
 import SearchIcon from '@/assets/icons/search.svg?react';
 import CrossIcon from '@/assets/icons/cross.svg?react';
+import EditIcon from '@/assets/icons/edit.svg?react';
+import CheckIcon from '@/assets/icons/check.svg?react';
+import InputCrossIcon from '@/assets/icons/input-cross.svg?react';
 
 export {
   ArrowBackIcon,
@@ -13,5 +16,8 @@ export {
   SunIcon,
   LogoIcon,
   SearchIcon,
-  CrossIcon
+  CrossIcon,
+  EditIcon,
+  CheckIcon,
+  InputCrossIcon
 };

@@ -1,0 +1,16 @@
+.statusOption {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  text-align: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.text {
+  color: var(--color-text-secondary);
+}
