@@ -3,101 +3,164 @@ import { Link } from 'react-router';
 
 import styles from './CharacterCard.module.scss';
 
-import type { Character } from '@/shared/types';
-import { FieldWithLabel } from '@/shared/components';
+import type { Character, Status } from '@/shared/types';
+import {
+  FieldWithLabel,
+  Input,
+  Selector,
+  StatusOption,
+  type SelectorOption
+} from '@/shared/components';
 import { CHARACTER_LABELS } from '@/shared/constants';
 import { clsx } from '@/shared/helpers';
 import { CheckIcon, CrossIcon, EditIcon } from '@/assets/icons';
+
+const statusOptions: SelectorOption[] = [
+  { label: <StatusOption status='Alive' />, value: 'Alive' },
+  { label: <StatusOption status='Dead' />, value: 'Dead' },
+  { label: <StatusOption status='Unknown' />, value: 'Unknown' }
+];
 
 export type CharacterCardDTO = Pick<
   Character,
   'id' | 'name' | 'image' | 'status' | 'location' | 'gender' | 'species' | 'url'
 >;
-type CardMode = 'idle' | 'hover' | 'edit';
+
+type CardMode = 'view' | 'edit';
 
 interface CharacterCardProps {
   character: CharacterCardDTO;
   onSave?: (updated: CharacterCardDTO) => void;
 }
+
 export const CharacterCard: FC<CharacterCardProps> = ({
   character,
   onSave
 }) => {
-  const [mode, setMode] = useState<CardMode>('idle');
-  const [data, setData] = useState(character);
-
-  const handleMouseEnter = () => {
-    if (mode === 'idle') setMode('hover');
-  };
-
-  const handleMouseLeave = () => {
-    if (mode === 'hover') setMode('idle');
-  };
+  const [mode, setMode] = useState<CardMode>('view');
+  const [editData, setEditData] = useState(character);
 
   const handleEditClick = () => {
+    setEditData(character);
     setMode('edit');
-    setData(character);
   };
+
   const handleCancel = () => {
-    setMode('idle');
+    setMode('view');
   };
+
   const handleSave = () => {
-    onSave?.(data);
-    setMode('idle');
+    onSave?.(editData);
+    setMode('view');
   };
+
+  const handleFieldChange =
+    (field: keyof CharacterCardDTO) => (value: string) => {
+      setEditData((prev) => ({
+        ...prev,
+        [field]:
+          field === 'location' ? { ...prev.location, name: value } : value
+      }));
+    };
+
+  const handleFieldReset = (field: keyof CharacterCardDTO) => () => {
+    setEditData((prev) => ({
+      ...prev,
+      [field]: field === 'location' ? character.location : character[field]
+    }));
+  };
+
+  const displayData = mode === 'view' ? character : editData;
+
   return (
-    <div
-      className={styles.cardContainer}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className={styles.cardContainer}>
       <div className={styles.imageContainer}>
         <img
           className={styles.image}
-          src={character.image}
+          src={displayData.image}
+          alt={displayData.name}
         />
       </div>
       <div className={styles.dataContainer}>
         <div className={styles.dataColumn}>
-          <Link
-            to={'/characters/' + character.id}
-            className={clsx(styles.characterName, 'heading-sm')}
-          >
-            {character.name}
-          </Link>
+          {mode === 'edit' ? (
+            <Input
+              placeholder='Name'
+              variant='underline'
+              value={editData.name}
+              onChange={handleFieldChange('name')}
+              onReset={handleFieldReset('name')}
+              className={clsx(styles.characterName, 'heading-sm')}
+            />
+          ) : (
+            <Link
+              to={`/characters/${displayData.id}`}
+              className={clsx(styles.characterName, 'heading-sm')}
+            >
+              {displayData.name}
+            </Link>
+          )}
+
           <FieldWithLabel label={CHARACTER_LABELS.GENDER}>
-            <p className={clsx(styles.field, 'body-sm')}>{character.gender}</p>
-          </FieldWithLabel>
-          <FieldWithLabel label={CHARACTER_LABELS.SPECIES}>
-            <p className={clsx(styles.field, 'body-sm')}>{character.species}</p>
-          </FieldWithLabel>
-          <FieldWithLabel label={CHARACTER_LABELS.LOCATION}>
             <p className={clsx(styles.field, 'body-sm')}>
-              {character.location.name}
+              {displayData.gender}
             </p>
           </FieldWithLabel>
+
+          <FieldWithLabel label={CHARACTER_LABELS.SPECIES}>
+            <p className={clsx(styles.field, 'body-sm')}>
+              {displayData.species}
+            </p>
+          </FieldWithLabel>
+
+          <FieldWithLabel label={CHARACTER_LABELS.LOCATION}>
+            {mode === 'edit' ? (
+              <Input
+                placeholder='Location'
+                variant='underline'
+                value={editData.location.name}
+                onChange={handleFieldChange('location')}
+                onReset={handleFieldReset('location')}
+                className={clsx(styles.field, 'body-sm')}
+              />
+            ) : (
+              <p className={clsx(styles.field, 'body-sm')}>
+                {displayData.location.name}
+              </p>
+            )}
+          </FieldWithLabel>
+
           <FieldWithLabel label={CHARACTER_LABELS.STATUS}>
-            <p className={clsx(styles.field, 'body-sm')}>{character.status}</p>
+            {mode === 'edit' ? (
+              <Selector
+                placeholder='Status'
+                size='small'
+                value={editData.status}
+                options={statusOptions}
+                onChange={handleFieldChange('status')}
+              />
+            ) : (
+              <StatusOption status={displayData.status as Status} />
+            )}
           </FieldWithLabel>
         </div>
-        {mode === 'hover' ? (
+
+        {mode === 'view' ? (
           <EditIcon
             className={styles.editIcon}
             onClick={handleEditClick}
           />
         ) : (
-          mode === 'edit' && (
-            <div className={styles.editButtonsContainer}>
-              <CrossIcon
-                className={styles.editIcon}
-                onClick={handleCancel}
-              />
-              <CheckIcon
-                className={styles.editIcon}
-                onClick={handleSave}
-              />
-            </div>
-          )
+          <div className={styles.editButtonsContainer}>
+            <CrossIcon
+              className={styles.editIcon}
+              onClick={handleCancel}
+            />
+            <CheckIcon
+              className={styles.editIcon}
+              onClick={handleSave}
+            />
+          </div>
         )}
       </div>
     </div>

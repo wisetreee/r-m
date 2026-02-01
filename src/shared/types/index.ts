@@ -1,8 +1,12 @@
+export type Status = 'Alive' | 'Dead' | 'Unknown';
+
+export type Gender = 'Male' | 'Female' | 'Genderless' | 'Unknown';
+
 export interface Character {
   id: number;
   name: string;
-  gender: 'Male' | 'Female' | 'Genderless' | 'Unknown';
-  status: 'Alive' | 'Dead' | 'Unknown';
+  gender: Gender;
+  status: Status;
   species: string;
   type: string;
   origin: {

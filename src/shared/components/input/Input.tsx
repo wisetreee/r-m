@@ -36,12 +36,12 @@ export const Input: FC<InputProps> = ({
 
   return (
     <div
-      className={clsx(styles[variant], styles.inputContainer, className)}
+      className={clsx(styles[variant], styles.inputContainer)}
       {...rest}
     >
       {Icon && <Icon className={styles.icon} />}
       <input
-        className={clsx(styles.input, variant === 'underline' && 'heading-sm')}
+        className={clsx(styles.input, className)}
         onChange={handleChange}
         placeholder={placeholder}
         value={value}

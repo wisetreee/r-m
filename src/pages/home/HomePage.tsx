@@ -5,9 +5,8 @@ import styles from './HomePage.module.scss';
 import {
   BigLogo,
   Input,
-  Loader,
   Selector,
-  type ISelectorOption
+  type SelectorOption
 } from '@/shared/components';
 import { SearchIcon } from '@/assets/icons';
 import { CharacterCard, type CharacterCardDTO } from '@/widgets';
@@ -26,13 +25,13 @@ const character: CharacterCardDTO = {
   url: 'https://rickandmortyapi.com/api/character/1'
 };
 
-const bigMockOptions: ISelectorOption[] = [
+const bigMockOptions: SelectorOption[] = [
   { label: 'label', value: 'value' },
   { label: 'label2', value: 'value2' },
   { label: 'label3', value: 'value3' }
 ];
 
-const smallMockOptions: ISelectorOption[] = [
+const smallMockOptions: SelectorOption[] = [
   { label: 'label4', value: 'value4' },
   { label: 'label5', value: 'value5' },
   { label: 'label6', value: 'value6' }
@@ -79,10 +78,6 @@ export const HomePage = () => {
         onChange={handleInputChange}
         onReset={handleInputReset}
         icon={SearchIcon}
-      />
-      <Loader
-        size='big'
-        footer='Loading characters...'
       />
 
       <CharacterCard character={character} />

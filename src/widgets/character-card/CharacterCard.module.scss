@@ -23,6 +23,7 @@ $inner-container-width: 15rem;
 
 .dataContainer {
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   width: $inner-container-width;
 }
@@ -44,6 +45,11 @@ $inner-container-width: 15rem;
 
 .editIcon {
   cursor: pointer;
+  opacity: 0;
+}
+
+.cardContainer:hover .editIcon {
+  opacity: 1;
 }
 
 .editButtonsContainer {

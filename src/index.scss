@@ -1,6 +1,10 @@
 @import 'normalize.css';
 
 :root {
+  --color-success: hsl(114deg 100% 36% / 100%);
+  --color-warning: hsl(36deg 100% 50% / 100%);
+  --color-danger: hsl(0deg 100% 44% / 100%);
+
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-synthesis: none;
