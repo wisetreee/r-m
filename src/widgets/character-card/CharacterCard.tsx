@@ -58,13 +58,6 @@ export const CharacterCard: FC<CharacterCardProps> = ({
       }));
     };
 
-  const handleFieldReset = (field: keyof CharacterCardDTO) => () => {
-    setEditData((prev) => ({
-      ...prev,
-      [field]: field === 'location' ? character.location : character[field]
-    }));
-  };
-
   const displayData = mode === 'view' ? character : editData;
 
   return (
@@ -84,7 +77,6 @@ export const CharacterCard: FC<CharacterCardProps> = ({
               variant='underline'
               value={editData.name}
               onChange={handleFieldChange('name')}
-              onReset={handleFieldReset('name')}
               className={clsx(styles.characterName, 'heading-sm')}
             />
           ) : (
@@ -115,7 +107,6 @@ export const CharacterCard: FC<CharacterCardProps> = ({
                 variant='underline'
                 value={editData.location.name}
                 onChange={handleFieldChange('location')}
-                onReset={handleFieldReset('location')}
                 className={clsx(styles.field, 'body-sm')}
               />
             ) : (

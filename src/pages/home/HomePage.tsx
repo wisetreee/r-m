@@ -9,7 +9,8 @@ import {
   type SelectorOption
 } from '@/shared/components';
 import { SearchIcon } from '@/assets/icons';
-import { CharacterCard, type CharacterCardDTO } from '@/widgets';
+import { CharacterCard } from '@/widgets';
+import { type CharacterCardDTO } from '@/shared/types';
 
 const character: CharacterCardDTO = {
   id: 1,
@@ -45,7 +46,7 @@ export const HomePage = () => {
   const handleBigChange = (value: string) => setValueBig(value);
   const handleSmallChange = (value: string) => setValueSmall(value);
   const handleInputChange = (value: string) => setInputValue(value);
-  const handleInputReset = () => setInputValue('');
+
   return (
     <section className={`container ${styles.charactersSection}`}>
       <BigLogo />
@@ -67,7 +68,6 @@ export const HomePage = () => {
         placeholder='qwer'
         value={inputValue}
         onChange={handleInputChange}
-        onReset={handleInputReset}
         icon={SearchIcon}
       />
 
@@ -76,7 +76,6 @@ export const HomePage = () => {
         value={inputValue}
         variant='underline'
         onChange={handleInputChange}
-        onReset={handleInputReset}
         icon={SearchIcon}
       />
 
