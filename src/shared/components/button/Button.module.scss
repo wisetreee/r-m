@@ -1,45 +1,50 @@
 .button {
-  border-radius: 999px;
   cursor: pointer;
+
   display: inline-flex;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+
   border: 1px solid transparent;
-  background: transparent;
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
+  border-radius: 999px;
+
+  font-family: Karla, sans-serif;
   font-size: 1.125rem;
+  font-weight: 700;
+
+  background: transparent;
 }
 
 /* variants */
 .primary {
-  background: white;
   border-color: var(--color-borders-button);
+  background: white;
 }
 
 .ghost {
-  background: transparent;
   border-color: transparent;
+  background: transparent;
 }
 
 .icon {
-  background: transparent;
   border-color: var(--color-borders-button);
+  background: transparent;
 }
 
 /* icon-only */
 .iconOnly {
-  border-radius: 12px;
   width: 44px;
   height: 44px;
   padding: 0;
+  border-radius: 12px;
 }
 
 /* pieces */
 .icon {
   display: inline-flex;
 }
+
 .label {
   white-space: nowrap;
 }

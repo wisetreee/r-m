@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import styles from './MainLayout.module.css';
+import styles from './MainLayout.module.scss';
 
 import { Footer, Header } from '@/shared/components';
 

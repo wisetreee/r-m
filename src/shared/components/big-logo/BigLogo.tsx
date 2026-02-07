@@ -1,4 +1,4 @@
-import styles from './BigLogo.module.css';
+import styles from './BigLogo.module.scss';
 
 import bigLogo from '@/assets/big_logo.png';
 

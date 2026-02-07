@@ -1,14 +1,14 @@
 import type { FC, FocusEvent, HTMLAttributes, ReactNode } from 'react';
 import { useMemo, useState } from 'react';
 
-import styles from './Selector.module.css';
+import styles from './Selector.module.scss';
 
 import { clsx } from '@/shared/helpers';
 import { ArrowIcon } from '@/assets/icons';
 
-export type TSelectorSize = 'big' | 'small';
+export type SelectorSize = 'big' | 'small';
 
-export interface ISelectorOption {
+export interface SelectorOption {
   label: ReactNode;
   value: string;
 }
@@ -18,9 +18,9 @@ interface SelectorProps extends Omit<
   'onChange'
 > {
   placeholder: string;
-  options: ISelectorOption[];
+  options: SelectorOption[];
   value?: string;
-  size?: TSelectorSize;
+  size?: SelectorSize;
   onChange?: (value: string) => void;
 }
 
@@ -78,7 +78,7 @@ export const Selector: FC<SelectorProps> = ({
         <span
           className={clsx(
             selectedOption ? styles.value : styles.placeholder,
-            size === 'big' ? 'text-input-label' : 'text-reg14'
+            size === 'big' ? 'label' : 'body-sm'
           )}
         >
           {selectedOption ? selectedOption.label : placeholder}
