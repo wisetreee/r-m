@@ -15,13 +15,10 @@ import { type CharacterCardDTO } from '@/shared/types';
 const character: CharacterCardDTO = {
   id: 1,
   name: 'Rick Sanchez',
-  status: 'Alive',
+  status: 'alive',
   species: 'Human',
-  gender: 'Male',
-  location: {
-    name: 'Earth',
-    url: 'https://rickandmortyapi.com/api/location/20'
-  },
+  gender: 'male',
+  location: 'Earth',
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
   url: 'https://rickandmortyapi.com/api/character/1'
 };
