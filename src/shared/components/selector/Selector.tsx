@@ -1,17 +1,13 @@
-import type { FC, FocusEvent, HTMLAttributes, ReactNode } from 'react';
+import type { FC, FocusEvent, HTMLAttributes } from 'react';
 import { useMemo, useState } from 'react';
 
 import styles from './Selector.module.scss';
 
 import { clsx } from '@/shared/helpers';
 import { ArrowIcon } from '@/assets/icons';
+import type { SelectorOption } from '@/shared/types';
 
 export type SelectorSize = 'big' | 'small';
-
-export interface SelectorOption {
-  label: ReactNode;
-  value: string;
-}
 
 interface SelectorProps extends Omit<
   HTMLAttributes<HTMLDivElement>,

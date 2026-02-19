@@ -2,80 +2,40 @@ import { useState } from 'react';
 
 import styles from './HomePage.module.scss';
 
-import {
-  BigLogo,
-  Input,
-  Selector,
-  type SelectorOption
-} from '@/shared/components';
-import { SearchIcon } from '@/assets/icons';
-import { CharacterCard } from '@/widgets';
-import { type CharacterCardDTO } from '@/shared/types';
+import { BigLogo } from '@/shared/components';
+import { CharacterCard, FilterPanel } from '@/widgets';
+import type { FilterPanelValues, CharacterCardDTO } from '@/shared/types';
+import { INITIAL_FILTER_VALUES } from '@/shared/constants';
 
 const character: CharacterCardDTO = {
   id: 1,
   name: 'Rick Sanchez',
   status: 'alive',
-  species: 'Human',
+  species: 'human',
   gender: 'male',
   location: 'Earth',
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
   url: 'https://rickandmortyapi.com/api/character/1'
 };
 
-const bigMockOptions: SelectorOption[] = [
-  { label: 'label', value: 'value' },
-  { label: 'label2', value: 'value2' },
-  { label: 'label3', value: 'value3' }
-];
-
-const smallMockOptions: SelectorOption[] = [
-  { label: 'label4', value: 'value4' },
-  { label: 'label5', value: 'value5' },
-  { label: 'label6', value: 'value6' }
-];
-
 export const HomePage = () => {
-  const [valueBig, setValueBig] = useState<string>('');
-  const [valueSmall, setValueSmall] = useState<string>('');
-  const [inputValue, setInputValue] = useState<string>('');
+  const [filterPanelValues, setFilterPanelValues] = useState<FilterPanelValues>(
+    INITIAL_FILTER_VALUES
+  );
 
-  const handleBigChange = (value: string) => setValueBig(value);
-  const handleSmallChange = (value: string) => setValueSmall(value);
-  const handleInputChange = (value: string) => setInputValue(value);
+  const onFilterChange = (newValues: FilterPanelValues) => {
+    setFilterPanelValues(newValues); // Просто устанавливаем новое значение
+    console.log('Новые фильтры:', newValues);
+  };
 
   return (
     <section className={`container ${styles.charactersSection}`}>
       <BigLogo />
 
-      <Selector
-        placeholder='Querty'
-        options={bigMockOptions}
-        onChange={handleBigChange}
-        value={valueBig}
+      <FilterPanel
+        initialValues={filterPanelValues}
+        onFilterChange={onFilterChange}
       />
-      <Selector
-        placeholder='Qwerty'
-        size='small'
-        onChange={handleSmallChange}
-        options={smallMockOptions}
-        value={valueSmall}
-      />
-      <Input
-        placeholder='qwer'
-        value={inputValue}
-        onChange={handleInputChange}
-        icon={SearchIcon}
-      />
-
-      <Input
-        placeholder='qwer'
-        value={inputValue}
-        variant='underline'
-        onChange={handleInputChange}
-        icon={SearchIcon}
-      />
-
       <CharacterCard character={character} />
     </section>
   );
