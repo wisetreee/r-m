@@ -3,13 +3,12 @@ import { Link } from 'react-router';
 
 import styles from './CharacterCard.module.scss';
 
-import type { CharacterCardDTO } from '@/shared/types';
+import type { CharacterCardDTO, SelectorOption } from '@/shared/types';
 import {
   FieldWithLabel,
   Input,
   Selector,
-  StatusOption,
-  type SelectorOption
+  StatusOption
 } from '@/shared/components';
 import { CHARACTER_LABELS } from '@/shared/constants';
 import { capitalizeFirstLetter, clsx } from '@/shared/helpers';

@@ -24,7 +24,7 @@ export const HomePage = () => {
   );
 
   const onFilterChange = (newValues: FilterPanelValues) => {
-    setFilterPanelValues(newValues); // Просто устанавливаем новое значение
+    setFilterPanelValues(newValues);
     console.log('Новые фильтры:', newValues);
   };
 
