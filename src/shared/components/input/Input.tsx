@@ -15,7 +15,6 @@ interface InputProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   placeholder?: string;
   value: string;
   onChange?: (value: string) => void;
-  onReset?: () => void;
 }
 export const Input: FC<InputProps> = ({
   variant = 'border',
@@ -23,7 +22,6 @@ export const Input: FC<InputProps> = ({
   placeholder,
   value,
   onChange,
-  onReset,
   className,
   ...rest
 }) => {
@@ -31,7 +29,7 @@ export const Input: FC<InputProps> = ({
     onChange?.(event.target.value);
   };
   const handleReset = () => {
-    onReset?.();
+    onChange?.('');
   };
 
   return (

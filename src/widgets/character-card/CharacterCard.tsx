@@ -3,22 +3,21 @@ import { Link } from 'react-router';
 
 import styles from './CharacterCard.module.scss';
 
-import type { CharacterCardDTO, Status } from '@/shared/types';
+import type { CharacterCardDTO, SelectorOption } from '@/shared/types';
 import {
   FieldWithLabel,
   Input,
   Selector,
-  StatusOption,
-  type SelectorOption
+  StatusOption
 } from '@/shared/components';
 import { CHARACTER_LABELS } from '@/shared/constants';
-import { clsx } from '@/shared/helpers';
+import { capitalizeFirstLetter, clsx } from '@/shared/helpers';
 import { CheckIcon, CrossIcon, EditIcon } from '@/assets/icons';
 
 const statusOptions: SelectorOption[] = [
-  { label: <StatusOption status='Alive' />, value: 'Alive' },
-  { label: <StatusOption status='Dead' />, value: 'Dead' },
-  { label: <StatusOption status='Unknown' />, value: 'Unknown' }
+  { label: <StatusOption status='alive' />, value: 'alive' },
+  { label: <StatusOption status='dead' />, value: 'dead' },
+  { label: <StatusOption status='unknown' />, value: 'unknown' }
 ];
 
 type CardMode = 'view' | 'edit';
@@ -53,17 +52,9 @@ export const CharacterCard: FC<CharacterCardProps> = ({
     (field: keyof CharacterCardDTO) => (value: string) => {
       setEditData((prev) => ({
         ...prev,
-        [field]:
-          field === 'location' ? { ...prev.location, name: value } : value
+        [field]: value
       }));
     };
-
-  const handleFieldReset = (field: keyof CharacterCardDTO) => () => {
-    setEditData((prev) => ({
-      ...prev,
-      [field]: field === 'location' ? character.location : character[field]
-    }));
-  };
 
   const displayData = mode === 'view' ? character : editData;
 
@@ -84,7 +75,6 @@ export const CharacterCard: FC<CharacterCardProps> = ({
               variant='underline'
               value={editData.name}
               onChange={handleFieldChange('name')}
-              onReset={handleFieldReset('name')}
               className={clsx(styles.characterName, 'heading-sm')}
             />
           ) : (
@@ -98,7 +88,7 @@ export const CharacterCard: FC<CharacterCardProps> = ({
 
           <FieldWithLabel label={CHARACTER_LABELS.GENDER}>
             <p className={clsx(styles.field, 'body-sm')}>
-              {displayData.gender}
+              {capitalizeFirstLetter(displayData.gender)}
             </p>
           </FieldWithLabel>
 
@@ -113,14 +103,13 @@ export const CharacterCard: FC<CharacterCardProps> = ({
               <Input
                 placeholder='Location'
                 variant='underline'
-                value={editData.location.name}
+                value={editData.location}
                 onChange={handleFieldChange('location')}
-                onReset={handleFieldReset('location')}
                 className={clsx(styles.field, 'body-sm')}
               />
             ) : (
               <p className={clsx(styles.field, 'body-sm')}>
-                {displayData.location.name}
+                {displayData.location}
               </p>
             )}
           </FieldWithLabel>
@@ -135,7 +124,7 @@ export const CharacterCard: FC<CharacterCardProps> = ({
                 onChange={handleFieldChange('status')}
               />
             ) : (
-              <StatusOption status={displayData.status as Status} />
+              <StatusOption status={displayData.status} />
             )}
           </FieldWithLabel>
         </div>

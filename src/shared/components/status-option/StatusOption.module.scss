@@ -9,6 +9,18 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
+
+  &.alive {
+    background-color: var(--color-success);
+  }
+
+  &.dead {
+    background-color: var(--color-danger);
+  }
+
+  &.unknown {
+    background-color: var(--color-warning);
+  }
 }
 
 .text {
